@@ -7,7 +7,7 @@
                   <i class="bi bi-house lh-1"></i>
                   <a href="/home" class="text-primary">Home</a>
                 </li>
-                <li class="breadcrumb-item"  aria-current="page">Product</li>
+                <li class="breadcrumb-item"  aria-current="page"><a href="/product" style="text-decoration: none" class="text-primary">Product</a></li>
                 <li class="breadcrumb-item"  aria-current="page">Edit-Product</li>
                 
               </ol>

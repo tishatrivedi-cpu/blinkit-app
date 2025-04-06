@@ -41,6 +41,17 @@
 </head>
 <body>
 
+    <div class="d-flex align-items-center mb-3 ">
+    
+   <ol class="breadcrumb text-primary" >
+                <li class="breadcrumb-item">
+                  <i class="bi bi-house lh-1"></i>
+                  <a href="/home" class="text-primary">Home</a>
+                </li>
+                <li class="breadcrumb-item"  aria-current="page">Profile</li> 
+              </ol>
+ </div>
+
     @php
         $user=Session::get('user')
     @endphp

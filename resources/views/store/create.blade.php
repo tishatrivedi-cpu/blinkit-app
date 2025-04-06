@@ -9,7 +9,7 @@
             <i class="bi bi-house lh-1"></i>
             <a href="/home" class="text-primary">Home</a>
         </li>
-        <li class="breadcrumb-item" aria-current="page">Store</li>
+           <li class="breadcrumb-item"  aria-current="page"><a href="/store" style="text-decoration: none" class="text-primary">Store</a></li>
         <li class="breadcrumb-item" aria-current="page">Create-Store</li>
 
     </ol>

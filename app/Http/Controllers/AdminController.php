@@ -92,7 +92,9 @@ class AdminController extends Controller
         $user_count=Person::count();
         $orders = Order::where('status', 1)->latest()->get();
         $user = Person::all();
-        return view('home',compact('category_count', 'order_count', 'ba_count', 'bd_count', 'subcat_count', 'product_count', 'store_count', 'ca_count', 'cd_count', 'user_count', 'orders' , 'user'));
+        $r = Order::where('status', 1)->sum('tot_amount');
+        $product = Product::latest()->paginate(6);
+        return view('home',compact('category_count', 'order_count', 'ba_count', 'bd_count', 'subcat_count', 'product_count', 'store_count', 'ca_count', 'cd_count', 'user_count', 'orders' , 'user','r', 'product'));
 
     }
 
@@ -205,6 +207,21 @@ class AdminController extends Controller
         $table->save();
         session()->put('user', $table);
         return redirect('/home')->with('success', 'your Password is change successfully');
+    }
+
+    public function search(Request $request)
+    {
+        // Access the 'query' parameter from the request
+        $query = $request->input('query'); // Use input() to get the query parameter
+    
+        // Search across multiple columns in the 'products' table
+        $data = Product::where('pname', 'like', "%$query%")
+            ->orWhere('subcategory', 'like', "%$query%")
+            ->orWhere('pro_desc', 'like', "%$query%")
+            ->orWhere('pro_price', 'like', "%$query%")
+            ->get();
+    
+        return view('search-results', compact('data'));
     }
     
 }

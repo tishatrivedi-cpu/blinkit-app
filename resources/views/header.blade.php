@@ -1,3 +1,11 @@
+
+@php
+    if (!Session::has('user')) {
+        header("Location: " . url('/'));
+        exit();
+    }
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -265,7 +273,7 @@
                     class="bi bi-person border border-primary text-primary"></i>Profile</a>
                 <a class="dropdown-item" href="/open_changepassword"><i class="fa-solid fa-key border border-danger text-danger"></i>
                    {{-- <i class="bi bi-gear border border-danger text-danger"></i>--}}ChangePassword</a>  
-                <a class="dropdown-item" href="/"><i
+                <a class="dropdown-item" href="/logout"><i
                     class="fa-solid fa-left-long border border-success text-success"></i>Logout</a> 
               </div>
                {{-- <div class="mx-3 mt-2 d-grid">
@@ -293,7 +301,14 @@
                 {{$user->username}}
               </h6>
             </div>
-            <div class="d-flex align-items-center mt-lg-3 gap-2">
+
+             <div class="text-center">
+              <h6 class="profile-name m-0 text-nowrap text-truncate">
+                {{$user->role}}
+              </h6>
+            </div>
+            
+            {{-- <div class="d-flex align-items-center mt-lg-3 gap-2">
               <a href="calendar.html" class="icon-box md grd-success-light rounded-2">
                 <i class="bi bi-calendar2-check fs-5 text-success"></i>
               </a>
@@ -303,7 +318,7 @@
               <a href="settings.html" class="icon-box md grd-danger-light rounded-2">
                 <i class="bi bi-whatsapp fs-5 text-danger"></i>
               </a>
-            </div>
+            </div> --}}
           </div>
           <!-- Sidebar profile ends -->
           <div class="sidebarMenuScroll">
@@ -352,12 +367,12 @@
                   <span class="menu-text">Store</span>
                 </a>
               </li>
-             <li>
+             {{-- <li>
                 <a href="/pincode">
                   <i class="fa-solid fa-city"></i>
                   <span class="menu-text">Pincode</span>
                 </a>
-              </li>
+              </li> --}}
              
               
 
@@ -383,7 +398,7 @@
               </li> --}}
 
               <li class="text-center" style="border: 20px solid white;">
-                <a href="/" class="btn btn-pr"><i class= "fa-solid fa-left-long" ></i>Logout</a>
+                <a href="/logout" class="btn btn-pr"><i class= "fa-solid fa-left-long" ></i>Logout</a>
               </li>
 
               {{-- <li>

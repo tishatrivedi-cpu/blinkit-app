@@ -35,6 +35,8 @@ Route::resource('/store', StoreController::class);
 
 Route::resource('/product', ProductController::class);
 
+Route::get('/logout',[AdminController::class, 'logout']);
+
 Route::resource('/subcategory', SubcategoryController::class);
 
 Route::get('/',[AdminController::class,'open_login']);
@@ -88,3 +90,9 @@ Route::post('/api_getOrderhistory', [ApiController::class, 'getOrderhistory']);
 Route::get('status/{id}', [PersonController::class, 'block_unblock']);
 
 Route::post('/api_editprofile', [ApiController::class, 'editprofile']);
+
+Route::get('/status_order/{id}', [OrderController::class, 'status']);
+Route::post('/search', [AdminController::class, 'search']);
+
+
+Route::get('/order-status-data', [OrderController::class, 'getOrderStatusData']);

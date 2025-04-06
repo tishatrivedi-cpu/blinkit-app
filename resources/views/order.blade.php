@@ -32,7 +32,7 @@
                 <th scope="col">Total_Amount</th>
                 <th scope="col">Status</th>
                 <th scope="col">Cash&online</th>
-                {{-- <th scope="col">opration</th> --}}
+                <th scope="col">Status</th>
             </tr>
         </thead>
         <tbody>
@@ -48,6 +48,24 @@
                     <td>{{ $item->amount }}</td>
                     <td>{{ $item->status }}</td>
                     <td>{{ $item->c_o }}</td>
+
+                    <td>
+                                        <a href="/status_order/{{ $item->_id }}">
+                                            @if ($item->status == 1)
+                                                <span class="badge bg-warning">RECEIVED</span>
+                                            @elseif ($item->status == 2)
+                                                <span class="badge bg-dark">SHIPPING</span>
+                                            @elseif ($item->status == 3)
+                                                <span class="badge bg-primary text-white">DISPATCHED</span>
+                                            @elseif ($item->status == 4)
+                                                <span class="badge bg-success">OUT FOR DELIVERY</span>
+                                            @else
+                                                <span class="badge" style="background-color:rgb(255, 132, 0);"><i
+                                                        class="fa-solid fa-circle-check mr-2"></i></i>DELIVERED
+                                                </span>
+                                            @endif
+                                        </a>
+                        </td>
 
                     {{-- @if (strcmp($item->c_o, 'CASH'))
                         <td>CASH PAYMENT</td>

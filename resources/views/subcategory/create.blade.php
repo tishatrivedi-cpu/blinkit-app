@@ -7,7 +7,7 @@
                   <i class="bi bi-house lh-1"></i>
                   <a href="/home" class="text-primary">Home</a>
                 </li>
-                <li class="breadcrumb-item"  aria-current="page">Subcategory</li>
+                <li class="breadcrumb-item"  aria-current="page"><a href="/subcategory" style="text-decoration: none" class="text-primary">SubCategory</a></li>
                 <li class="breadcrumb-item" aria-current="page">Create-Subcategory</li>
                 
               </ol>

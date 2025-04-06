@@ -46,6 +46,8 @@ return [
             'database' => 'blinkit'
         ],
 
+       
+
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),

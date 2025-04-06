@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,14 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         /* body {
             background-color: #f0f2f5;
             padding: 40px 20px;
             display: flex;
             justify-content: center;
         } */
-        
+
         .dashboard {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -28,7 +29,7 @@
             max-width: 1200px;
             width: 100%;
         }
-        
+
         .card {
             background: white;
             border-radius: 16px;
@@ -37,12 +38,12 @@
             position: relative;
             transition: all 0.3s ease;
         }
-        
+
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .card-header {
             padding: 20px;
             background: linear-gradient(to right, #4776E6, #8E54E9);
@@ -50,46 +51,46 @@
             color: white;
             text-align: left;
         }
-        
+
         .card-header h2 {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 5px;
         }
-        
+
         .card-header .subtitle {
             font-size: 12px;
             opacity: 0.8;
         }
-        
+
         .card-body {
             padding: 25px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .card-value {
             font-size: 32px;
             font-weight: 700;
             color: #333;
         }
-        
+
         .card-trend {
             font-size: 14px;
             display: flex;
             align-items: center;
             margin-top: 5px;
         }
-        
+
         .up {
             color: #4CAF50;
         }
-        
+
         .down {
             color: #F44336;
         }
-        
+
         .card-icon {
             width: 60px;
             height: 60px;
@@ -100,7 +101,7 @@
             color: white;
             font-size: 24px;
         }
-        
+
         .card-footer {
             padding: 15px 20px;
             background: #f9f9f9;
@@ -110,7 +111,7 @@
             display: flex;
             justify-content: space-between;
         }
-        
+
         .progress-container {
             height: 6px;
             background-color: #f0f0f0;
@@ -119,91 +120,147 @@
             margin-top: 5px;
             width: 100%;
         }
-        
+
         .progress-bar {
             height: 100%;
             border-radius: 3px;
         }
-        
+
         /* Card specific styles */
         .users-card .card-header {
             background: linear-gradient(to right, #4776E6, #8E54E9);
         }
-        
+
         .users-card .card-icon {
             background: linear-gradient(to right, #4776E6, #8E54E9);
         }
-        
+
         .sales-card .card-header {
             background: linear-gradient(to right, #4776E6, #8E54E9);
         }
-        
+
         .sales-card .card-icon {
             background: linear-gradient(to right, #4776E6, #8E54E9);
         }
-        
+
         .orders-card .card-header {
             background: linear-gradient(to right, #4776E6, #8E54E9);
         }
-        
+
         .orders-card .card-icon {
             background: linear-gradient(to right, #4776E6, #8E54E9);
         }
-        
+
         .tasks-card .card-header {
             background: linear-gradient(to right, #4776E6, #8E54E9);
         }
-        
+
         .tasks-card .card-icon {
-            background: linear-gradient(to right,#4776E6, #8E54E9);
+            background: linear-gradient(to right, #4776E6, #8E54E9);
         }
-        
+
         .users-card .progress-bar {
             background: #8E54E9;
             width: 85%;
         }
-        
+
         .sales-card .progress-bar {
             background: #38ef7d;
             width: 70%;
         }
-        
+
         .orders-card .progress-bar {
             background: #FFC837;
             width: 60%;
         }
-        
+
         .tasks-card .progress-bar {
             background: #DD2476;
             width: 45%;
         }
-        
+
         /* Animation */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         .card {
             animation: fadeIn 0.5s ease forwards;
             opacity: 0;
         }
-        
-        .card:nth-child(1) { animation-delay: 0.1s; }
-        .card:nth-child(2) { animation-delay: 0.2s; }
-        .card:nth-child(3) { animation-delay: 0.3s; }
-        .card:nth-child(4) { animation-delay: 0.4s; }
-        
+
+        .card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
         /* Responsive tweaks */
         @media (max-width: 768px) {
             .dashboard {
                 grid-template-columns: 1fr;
             }
         }
+
+        .search {
+            border: 2px solid #097677;
+            background-color: white;
+            color: #097677;
+            border-radius: 10px;
+
+        }
+
+        .search:hover {
+            border: 1px solid #097677;
+            background-color: #097677;
+            color: white;
+            border-radius: 10px;
+            transition: 0.6s;
+
+
+        }
     </style>
+
 </head>
+
 <body>
-    <div class="dashboard">
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form action="/search" method="POST" class="d-flex">
+                @csrf
+                <input type="search" name="query" class="form-control" placeholder="Search.....">
+                <button type="submit" class="btn search ms-2">Search</button>
+            </form>
+        </div>
+    </div>
+    {{-- <form class="form-header" action="/search" method="POST">
+                                @csrf
+                                <input class="au-input au-input--xl" type="text" name="query" placeholder="Search..." />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+              </form> --}}
+    <div class="dashboard mt-5">
+
         <div class="card users-card">
             <div class="card-header">
                 <h2>Total Category</h2>
@@ -211,16 +268,16 @@
             </div>
             <div class="card-body">
                 <div>
-                    <div class="card-value">{{$category_count}}</div>
+                    <div class="card-value">{{ $category_count }}</div>
                     <div class="card-trend up">
-                        {{$category_count}}
+                        {{ $category_count }}
                     </div>
                     <div class="progress-container">
                         <div class="progress-bar"></div>
                     </div>
                 </div>
                 <div class="card-icon">
-                     <a href="/category" style="color: white"><i class="fa-solid fa-list"></i></a>
+                    <a href="/category" style="color: white"><i class="fa-solid fa-list"></i></a>
                 </div>
             </div>
             <div class="card-footer">
@@ -228,7 +285,7 @@
                 <span>85% of target</span>
             </div>
         </div>
-        
+
         <div class="card sales-card">
             <div class="card-header">
                 <h2>Total SubCategory</h2>
@@ -236,9 +293,9 @@
             </div>
             <div class="card-body">
                 <div>
-                    <div class="card-value">{{$subcat_count}}</div>
+                    <div class="card-value">{{ $subcat_count }}</div>
                     <div class="card-trend up">
-                        {{$subcat_count}}
+                        {{ $subcat_count }}
                     </div>
                     <div class="progress-container">
                         <div class="progress-bar"></div>
@@ -253,7 +310,7 @@
                 <span>70% of daily goal</span>
             </div>
         </div>
-        
+
         <div class="card orders-card">
             <div class="card-header">
                 <h2>New Orders</h2>
@@ -261,9 +318,9 @@
             </div>
             <div class="card-body">
                 <div>
-                    <div class="card-value">{{$order_count}}</div>
+                    <div class="card-value">{{ $order_count }}</div>
                     <div class="card-trend down">
-                        {{$order_count}}
+                        {{ $order_count }}
                     </div>
                     <div class="progress-container">
                         <div class="progress-bar"></div>
@@ -278,7 +335,7 @@
                 <span>60% processed</span>
             </div>
         </div>
-        
+
         <div class="card tasks-card">
             <div class="card-header">
                 <h2>Total Product</h2>
@@ -286,16 +343,16 @@
             </div>
             <div class="card-body">
                 <div>
-                    <div class="card-value">{{$product_count}}</div>
+                    <div class="card-value">{{ $product_count }}</div>
                     <div class="card-trend down">
-                       {{$product_count}}
+                        {{ $product_count }}
                     </div>
                     <div class="progress-container">
                         <div class="progress-bar"></div>
                     </div>
                 </div>
                 <div class="card-icon">
-                     <a href="/subcategory" style="color: white"><i class="fa-solid fa-boxes-stacked"></i></a>
+                    <a href="/product" style="color: white"><i class="fa-solid fa-boxes-stacked"></i></a>
                 </div>
             </div>
             <div class="card-footer">
@@ -307,31 +364,31 @@
     <div class="dashboard mt-5">
         <div class="card users-card">
             <div class="card-header">
-                <h2>Total Store</h2>
+                <h2>Total Revenue</h2>
                 <div class="subtitle">All Store</div>
             </div>
             <div class="card-body">
                 <div>
-                    <div class="card-value">{{$store_count}}</div>
+                    <div class="card-value">{{ $r }}</div>
                     <div class="card-trend up">
-                        {{$store_count}}
+                        {{ $r }}
                     </div>
                     <div class="progress-container">
                         <div class="progress-bar"></div>
                     </div>
                 </div>
-                
+
                 <div class="card-icon">
-                      <a href="/store" style="color: white"><i class="fa-solid fa-store"></i></a>
+                    <a href="/store" style="color: white"><i class="fa-solid fa-store"></i></a>
                 </div>
-                
+
             </div>
             <div class="card-footer">
                 <span>Updated 2 hours ago</span>
                 <span>85% of target</span>
             </div>
         </div>
-        
+
         <div class="card sales-card">
             <div class="card-header">
                 <h2>Total Coupon</h2>
@@ -339,20 +396,20 @@
             </div>
             <div class="card-body">
                 <div>
-                  <p>Active</p>
-                    <div class="card-value">{{$ca_count}}</div>
+                    <p>Active</p>
+                    <div class="card-value">{{ $ca_count }}</div>
                     <div class="card-trend up">
-                        {{$ca_count}}
+                        {{ $ca_count }}
                     </div>
                     <div class="progress-container">
                         <div class="progress-bar"></div>
                     </div>
                 </div>
                 <div>
-                  <p>Deactive</p>
-                    <div class="card-value">{{$cd_count}}</div>
+                    <p>Deactive</p>
+                    <div class="card-value">{{ $cd_count }}</div>
                     <div class="card-trend up">
-                        {{$cd_count}}
+                        {{ $cd_count }}
                     </div>
                     <div class="progress-container">
                         <div class="progress-bar"></div>
@@ -367,7 +424,7 @@
                 <span>70% of daily goal</span>
             </div>
         </div>
-        
+
         <div class="card orders-card">
             <div class="card-header">
                 <h2>Total Users</h2>
@@ -375,9 +432,9 @@
             </div>
             <div class="card-body">
                 <div>
-                    <div class="card-value">{{$user_count}}</div>
+                    <div class="card-value">{{ $user_count }}</div>
                     <div class="card-trend down">
-                        {{$user_count}}
+                        {{ $user_count }}
                     </div>
                     <div class="progress-container">
                         <div class="progress-bar"></div>
@@ -392,7 +449,7 @@
                 <span>60% processed</span>
             </div>
         </div>
-        
+
         <div class="card tasks-card">
             <div class="card-header">
                 <h2>Total Banner</h2>
@@ -402,26 +459,26 @@
                 <div>
 
                     <p>Active</p>
-                    <div class="card-value">{{$ba_count}}</div>
+                    <div class="card-value">{{ $ba_count }}</div>
                     <div class="card-trend down">
-                       {{$ba_count}}
+                        {{ $ba_count }}
                     </div>
                     <div class="progress-container">
                         <div class="progress-bar"></div>
                     </div>
                 </div>
                 <div>
-                  <p>Deactive</p>
-                    <div class="card-value">{{$bd_count}}</div>
+                    <p>Deactive</p>
+                    <div class="card-value">{{ $bd_count }}</div>
                     <div class="card-trend down">
-                       {{$bd_count}}
+                        {{ $bd_count }}
                     </div>
                     <div class="progress-container">
                         <div class="progress-bar"></div>
                     </div>
                 </div>
                 <div class="card-icon">
-                     <a href="/store" style="color: white"><i class="fa-solid fa-desktop"></i></a>
+                    <a href="/store" style="color: white"><i class="fa-solid fa-desktop"></i></a>
                 </div>
             </div>
             <div class="card-footer">
@@ -430,48 +487,131 @@
             </div>
         </div>
     </div>
-        
+     <hr class="mt-5">
+    <h1 class="mt-3 text-center">Order Status Distribution</h1>
+    <hr>
+ <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <canvas id="orderStatusChart"></canvas>
+        </div>
+    </div>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('/order-status-data')
+              .then(response => response.json())
+              .then(orderData => {
+      
 
-<hr class="mt-5">
-          <h1 class="mt-3 text-center">Recent Orders</h1>
-<hr>
-<table class="table table-striped col-6" >
-    <thead>
-        <tr>
-            <th>Sr No.</th>
-            <th>Username</th>
-            <th>Pic</th>
-            <th>Property name</th>
-            <th>Price</th>
-            <th>Total amount</th>
+        const ctx = document.getElementById('orderStatusChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(orderData.counts),
+                datasets: [{
+                    label: 'Order Status',
+                    data: Object.values(orderData.counts),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',  // In Cart
+                        'rgba(54, 162, 235, 0.7)',  // Confirmed
+                        'rgba(255, 206, 86, 0.7)'   // Other
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Order Status Distribution'
+                    },
+                      tooltip: {
+                          callbacks: {
+                              label: function(context) {
+                                  let label = context.label || '';
+                                  if (label) {
+                                      label += ': ';
+                                  }
+                                  const count = orderData.counts[context.label];
+                                  const percentage = orderData.percentages[context.label];
+                                  label += `${count} (${percentage}%)`;
+                                  return label;
+                              }
+                          }
+                      }
+                }
+            }
+        });
+      })
+    });
+</script>
+    <hr class="mt-5">
+    <h1 class="mt-3 text-center">Top Products</h1>
+    <hr>
 
+    <div class="row">
+        @foreach ($product as $item)
+            <div class="col-4 mt-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ $item->pro_pic1 }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ $item->pname }}</h5> <br>
+                    </div>
+                    <h5 class="text-center">{{ $item->pro_price }}</h5>
 
-
-
-
-        </tr>
-    </thead>
-    <tbody>
-
-        @foreach ( $orders as $item)    
-            <tr>
-                <td>{{$loop->index + 1}}</td>
-                @foreach ($user as $i)
-                    
-                @if ($item->uid===$i->_id)
-                <td>{{$i->username}}</td>
-                @endif
-                @endforeach
-                <td><img src="{{$item->pic1}}" height="50" width="50" alt=""></td>
-                <td>{{$item->pname}}</td>
-                <td>{{$item->amount}}</td>
-                <td>{{$item->tot_amount}}</td>
-            </tr>
+                </div>
+            </div>
         @endforeach
-    </tbody>
-</table>
+
+    </div>
+
+
+    <hr class="mt-5">
+    <h1 class="mt-3 text-center">Recent Orders</h1>
+    <hr>
+    <table class="table table-striped col-6">
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Username</th>
+                <th>Pic</th>
+                <th>Product name</th>
+                <th>Price</th>
+                <th>Total amount</th>
+
+
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach ($orders as $item)
+                <tr>
+                    <td>{{ $loop->index + 1 }}</td>
+                    @foreach ($user as $i)
+                        @if ($item->uid === $i->_id)
+                            <td>{{ $i->username }}</td>
+                        @endif
+                    @endforeach
+                    <td><img src="{{ $item->pic1 }}" height="50" width="50" alt=""></td>
+                    <td>{{ $item->pname }}</td>
+                    <td>{{ $item->amount }}</td>
+                    <td>{{ $item->tot_amount }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </body>
+
 </html>
 
 
@@ -511,7 +651,7 @@
                 <div class="bg-transparent-light rounded-1 mb-3 position-relative" style=" background: #A1E3F9;">
                   <div class="p-3 text-white">
                     {{-- <div class="arrow-label">+18%</div> --}}
-                    {{-- <div class="mb-2">
+{{-- <div class="mb-2">
                       <i class="bi bi-box-seam fs-1 lh-1"></i>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
@@ -526,7 +666,7 @@
                 <div class="bg-transparent-light rounded-1 mb-3 position-relative" style=" background: #D1F8EF;">
                   <div class="p-3 text-white">
                     {{-- <div class="arrow-label">+24%</div> --}}
-                    {{-- <div class="mb-2">
+{{-- <div class="mb-2">
                       <i class="bi bi-bell fs-1 lh-1"></i>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">

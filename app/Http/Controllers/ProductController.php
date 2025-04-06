@@ -42,7 +42,7 @@ class ProductController extends Controller
                 "subcategory" => 'required',
                 "pname" => 'required',
                 "pro_desc" => "required",
-                "pro_disc" => "required | numeric | min:0",
+                "pro_disc" => "required | min:0",
                 "pro_price" => "required | numeric | min:1",
                 "pro_pic1" => "required",
                 "pro_pic2" => "required",
