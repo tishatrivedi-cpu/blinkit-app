@@ -564,7 +564,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-center">{{ $item->pname }}</h5> <br>
                     </div>
-                    <h5 class="text-center">{{ $item->pro_price }}</h5>
+                    <h5 class="text-center"><i class="fa-solid fa-indian-rupee-sign"></i>{{ $item->pro_price }}</h5>
 
                 </div>
             </div>

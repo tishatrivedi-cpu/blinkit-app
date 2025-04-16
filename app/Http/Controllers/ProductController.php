@@ -136,6 +136,7 @@ class ProductController extends Controller
         );
 
         $table = Product::find($product->_id);
+        $table->subcategory = $request->subcategory;
         $table->pname = $request->pname;
         $table->pro_desc = $request->pro_desc;
         $table->pro_disc = $request->pro_disc;
